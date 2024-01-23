@@ -1,0 +1,184 @@
+
+
+
+                  // Positioned(
+                  //   bottom: 0,
+                  //   child: 
+                  // ),
+// floatingActionButton: FloatingActionButton(
+//     child: IconButton(
+//         onPressed: () {
+//           _showBottomPop(context);
+//         },
+//         icon: Icon(Icons.add)),
+//     onPressed: () {
+//       _showBottomPop(context);
+//     }),
+// backgroundColor: Color.fromARGB(255, 225, 224, 224),
+// body: Stack(
+//   children: [
+//     Positioned(
+//       top: 0,
+//       child: Container(
+//         width: MediaQuery.of(context).size.width,
+//         height: 300,
+//         decoration: BoxDecoration(
+//           color: Colors.orange,
+//           borderRadius: BorderRadius.only(
+//             bottomLeft: Radius.circular(40),
+//             bottomRight: Radius.circular(40),
+//           ),
+//           image: DecorationImage(
+//             image: AssetImage('Assets/imagestwo/main4.png'),
+//             fit: BoxFit.cover,
+//           ),
+//         ),
+//       ),
+//     ),
+//     Positioned(
+//       top: 170,
+//       left: 20,
+//       child: Text(
+//         'Hey!',
+//         style: TextStyle(
+//           fontSize: 35,
+//           fontWeight: FontWeight.bold,
+//           color: Colors.black,
+//         ),
+//       ),
+//     ),
+//     Positioned(
+//       top: 220,
+//       left: 10,
+//       child: Text(
+//         'You have ${habitList.length} tasks left for today!',
+//         style: TextStyle(
+//           fontSize: 20,
+//           fontWeight: FontWeight.bold,
+//           color: Colors.black,
+//         ),
+//       ),
+//     ),
+//     Positioned(
+//       top: 320,
+//       child: Container(
+//         width: MediaQuery.of(context).size.width,
+//         height: 526,
+//         decoration: BoxDecoration(
+//           color: Colors.white,
+//           borderRadius: BorderRadius.only(
+//             topLeft: Radius.circular(30),
+//             topRight: Radius.circular(30),
+//           ),
+//         ),
+//         child: Padding(
+//           padding: EdgeInsets.all(10),
+//           child: SingleChildScrollView(
+//             scrollDirection: Axis.vertical,
+//             child: Column(
+//               children: [
+//                 Column(
+//                   children: [
+//                     Padding(
+//                       padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
+//                       child: Row(
+//                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//                         children: [
+//                           Text(
+//                             'Keep going!',
+//                             style: TextStyle(
+//                               color: Colors.grey[600],
+//                               fontSize: 16,
+//                             ),
+//                           ),
+//                           Text(
+//                             "${((counter / habitList.length) * 100).round()}%",
+//                             style: TextStyle(
+//                               color: Colors.grey[600],
+//                               fontSize: 16,
+//                             ),
+//                           )
+//                         ],
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.only(top: 20),
+//                       child: SizedBox(
+//                         width: MediaQuery.of(context).size.width * 0.85,
+//                         child: ClipRRect(
+//                           borderRadius:
+//                               BorderRadius.all(Radius.circular(10)),
+//                           child: LinearProgressIndicator(
+//                             minHeight: 12,
+//                             color: Colors.deepPurpleAccent,
+//                             backgroundColor:
+//                                 Color.fromARGB(255, 192, 170, 250),
+//                             value: (counter / habitList.length),
+//                           ),
+//                         ),
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: EdgeInsets.only(top: 10),
+//                       child: Divider(),
+//                     ),
+//                     SizedBox(
+//                       child: ListView.builder(
+//                         physics: NeverScrollableScrollPhysics(),
+//                         padding: EdgeInsets.zero,
+//                         itemCount: habitList.length,
+//                         shrinkWrap: true,
+//                         itemBuilder: (context, int index) {
+//                           return ListTile(
+//                             title: Text(habitList[index][1]),
+//                             subtitle: Text(habitList[index][2]),
+//                             trailing: habitList[index][3],
+//                             leading: SingleChildScrollView(
+//                               child: Checkbox(
+//                                 value: habitList[index][0],
+//                                 onChanged: (value) {
+//                                   setState(() {
+//                                     if (value == false) {
+//                                       counter -= 1;
+//                                     } else {
+//                                       counter += 1;
+//                                     }
+//                                     habitList[index][0] = value!;
+//                                   });
+//                                 },
+//                               ),
+//                             ),
+//                           );
+//                         },
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     ),
+//   ],
+// ),
+
+  
+      // body: Builder(
+      //   builder: (context){
+      //   return LiquidSwipe(pages: pages[],
+      //   fullTransitionValue: 880,
+      //   waveType:WaveType.circularReveal ,
+      //   slideIconWidget: const Icon(Icons.arrow_back_ios,color: Colors.white,),
+      //   positionSlideIcon: 0.8,
+      //   onPageChangeCallback: (page){
+      //     print(page);
+      //   },
+      //   liquidController: LiquidController(),);
+      // })
+
+
+
+
+      
+       

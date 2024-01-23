@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "217416957197",
+    "project_id": "be-you-86497",
+    "storage_bucket": "be-you-86497.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217416957197:android:31b79249ee04992d850444",
+        "android_client_info": {
+          "package_name": "com.example.beu_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4myV_Sq0bdtpk4CSKPrrZ-8EozMzAmcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

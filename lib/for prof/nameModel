@@ -1,0 +1,14 @@
+class UserData {
+  static const String boxName = 'user_data';
+  static const String keyName = 'user_name';
+
+  static Future<void> setUserName(String name) async {
+    var box = await Hive.openBox(boxName);
+    await box.put(keyName, name);
+  }
+
+  static Future<String?> getUserName() async {
+    var box = await Hive.openBox(boxName);
+    return box.get(keyName);
+  }
+}
