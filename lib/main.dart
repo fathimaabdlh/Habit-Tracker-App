@@ -1,9 +1,6 @@
-import 'package:beu_/main%20pages/firstPage.dart';
-import 'package:beu_/main%20pages/homePage.dart';
+import 'package:beu_/main pages/firstPage.dart';
+import 'package:beu_/main pages/thirdPage.dart';
 import 'package:beu_/main%20pages/newprofilepage.dart';
-import 'package:beu_/main%20pages/sevenHomepage.dart';
-import 'package:beu_/main%20pages/thirdPage.dart';
-import 'package:beu_/signUp.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,14 +35,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      home:
-      // FirstPage(),
-      // HomePage(),
-      
-     showIntro ? FirstPage() : 
-      SignUp(),
-      // Use FirstPage() as the initial page if showIntro is true,
-      // otherwise use ThirdPage() or your desired main content page.
+      home: showIntro ? FirstPage() : ThirdPage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(),
     );

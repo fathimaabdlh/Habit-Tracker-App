@@ -462,7 +462,7 @@ class _SignUpState extends State<SignUp> {
                       padding: EdgeInsets.symmetric(horizontal: 50),
                       child: TextButton(
                         onPressed: () {
-                          Navigator.of(context).pushReplacement(
+                          Navigator.of(context).push(
                               MaterialPageRoute(
                                   builder: (context) => ThirdPage()));
                         },

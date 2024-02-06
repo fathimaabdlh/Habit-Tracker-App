@@ -1,42 +1,67 @@
-import 'package:beu_/for%20homepage/habit_database.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:beu_/for%20homepage/habit_database.dart';
+
+// Extension for DateTime to check if two dates are the same
+extension DateTimeExtension on DateTime {
+  bool isSameDate(DateTime other) {
+    return this.year == other.year && this.month == other.month && this.day == other.day;
+  }
+}
+
+// Create a DateTime object from a string in the format yyyymmdd
+DateTime createDateTimeObject(String yyyymmdd) {
+  if (yyyymmdd.length != 8) {
+    
+    return DateTime.now(); // Return current date if the format is incorrect
+  }
+
+  int yyyy = int.parse(yyyymmdd.substring(0, 4));
+  int mm = int.parse(yyyymmdd.substring(4, 6));
+  int dd = int.parse(yyyymmdd.substring(6, 8));
+
+  return DateTime(yyyy, mm, dd);
+}
 
 class PastHabitsPage extends StatelessWidget {
   final DateTime? selectedDate;
   final HabitDatabase? db;
 
-  // Constructor to receive required parameters
   PastHabitsPage(this.selectedDate, this.db);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Past Habits - ${selectedDate?.toLocal()}"),
+        title: Text("Past Habits - ${DateFormat.yMd().format(selectedDate!)}"),
       ),
-      // body: ListView.builder(
-      //   itemCount: db?.todaysHabitList?.length ?? 0,
-      //   itemBuilder: (context, index) {
-      //     //print(db?.todaysHabitList?[index][0].isSameDate(selectedDate));
-      //     //  return Text('kkk');
-      //     String habitName = db?.todaysHabitList?[index][0] ?? "fathiiiii";
-      //     bool isCompleted = db?.todaysHabitList?[index][1] ?? false;
+      body: ListView.builder(
+        itemCount: db?.todaysHabitList?.length ?? 0,
+        itemBuilder: (context, index) {
+          if (db?.todaysHabitList != null &&
+              index >= 0 &&
+              index < db!.todaysHabitList!.length) {
+            var habitEntry = db!.todaysHabitList![index];
+            if (habitEntry != null && habitEntry.length >= 3) {
+              String habitName = habitEntry[0].toString() ?? "Unknown Habit";
+              var isCompleted = habitEntry[2] ?? false;
 
-      //     // Assuming `isSameDate` is a method to compare if the habit date matches the selected date
-      //     bool habitOnSelectedDate =
-      //         db?.todaysHabitList?[index][0].isSameDate(selectedDate);
+              String habitDateStr = habitEntry[0] ?? "";
+              DateTime habitDate = createDateTimeObject(habitDateStr);
 
-      //     if (habitOnSelectedDate) {
-      //       return ListTile(
-      //         title: Text(habitName),
-      //         subtitle: Text("Completed: $isCompleted"),
-      //       );
-      //     } else {
-      //       return SizedBox
-      //           .shrink(); // Return an empty widget for habits not on the selected date
-      //     }
-      //   },
-      // ),
+              var habitOnSelectedDate = habitDate.isSameDate(selectedDate ?? DateTime.now());
+
+              if (habitOnSelectedDate) {
+                return ListTile(
+                  subtitle: Text("Completed: $isCompleted"),
+                );
+              }
+            }
+          }
+
+          return SizedBox.shrink();
+        },
+      ),
     );
   }
 }
@@ -45,9 +70,56 @@ class PastHabitsPage extends StatelessWidget {
 
 
 
+// import 'package:beu_/for%20homepage/habit_database.dart';
+// import 'package:flutter/material.dart';
+
+// class PastHabitsPage extends StatelessWidget {
+//   final DateTime? selectedDate;
+//   final HabitDatabase? db;
+  
+
+//   // Constructor to receive required parameters
+//   PastHabitsPage(this.selectedDate, this.db);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Past Habits - ${selectedDate?.toLocal()}"),
+//       ),
+//       body: ListView.builder(
+//         itemCount: db?.todaysHabitList?.length ?? 0,
+//         itemBuilder: (context, index) {
+//           //print(db?.todaysHabitList?[index][0].isSameDate(selectedDate));
+//           //  return Text('kkk');
+//           String habitName = db?.todaysHabitList?[index][0] ?? "fathiiiii";
+//           bool isCompleted = db?.todaysHabitList?[index][1] ?? false;
 
 
 
+//           // Assuming `isSameDate` is a method to compare if the habit date matches the selected date
+//           // bool habitOnSelectedDate =
+//           //     db?.todaysHabitList?[index][0].isSameDate(selectedDate);
+//           bool habitOnSelectedDate = db?.todaysHabitList?[index][0].isSameDate(selectedDate);
+
+          
+
+       
+//           if (habitOnSelectedDate) {
+//             return ListTile(
+//               title: Text(habitName),
+//               subtitle: Text("Completed: $isCompleted"),
+//             );
+            
+//           } else {
+//             return SizedBox
+//                 .shrink(); // Return an empty widget for habits not on the selected date
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }
 
 
 

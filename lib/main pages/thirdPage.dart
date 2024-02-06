@@ -1,11 +1,9 @@
-import 'package:beu_/main%20pages/fourthPage.dart';
+import 'package:beu_/main pages/fourthPage.dart';
 import 'package:beu_/intro_screen/introOne.dart';
 import 'package:beu_/model/forgot.dart';
 import 'package:beu_/signUp.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThirdPage extends StatefulWidget {
@@ -45,7 +43,7 @@ class _ThirdPageState extends State<ThirdPage> {
       // Save login status in SharedPreferences
       await saveLoginStatus(true);
 
-      Navigator.push(
+      Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => FourthPage()),
       );
@@ -63,6 +61,24 @@ class _ThirdPageState extends State<ThirdPage> {
           SnackBar(content: Text("Wrong password provided for that user")),
         );
       }
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    checkLoggedInStatus();
+  }
+
+  Future<void> checkLoggedInStatus() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+
+    if (isLoggedIn) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => FourthPage()),
+      );
     }
   }
 
@@ -102,19 +118,22 @@ class _ThirdPageState extends State<ThirdPage> {
                     ],
                   ),
                   SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "  Make you healthier, happier, and more\n                  productive.",
-                        style: TextStyle(
-                          color: Colors.black,
-                          letterSpacing: BorderSide.strokeAlignOutside,
-                          fontSize: 20,
-                          wordSpacing: BorderSide.strokeAlignOutside,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "  Make you healthier, happier, and more\n                  productive.",
+                          style: TextStyle(
+                            color: Colors.black,
+                            letterSpacing: BorderSide.strokeAlignOutside,
+                            fontSize: 20,
+                            wordSpacing: BorderSide.strokeAlignOutside,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   SizedBox(height: 55),
                   Container(
@@ -173,6 +192,8 @@ class _ThirdPageState extends State<ThirdPage> {
                                   return 'Please Enter Your Password';
                                 }
                               },
+
+                              
                               obscureText: true,
                               controller: _passwordController,
                               decoration: InputDecoration(
@@ -398,6 +419,7 @@ class _ThirdPageState extends State<ThirdPage> {
   //     ],
   //   );
   // }
+
 
   // continueButton() {
   //   return Container(

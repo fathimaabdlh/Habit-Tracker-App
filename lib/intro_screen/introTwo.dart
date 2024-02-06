@@ -1,3 +1,4 @@
+import 'package:beu_/for%20homepage/habit_database.dart';
 import 'package:beu_/main%20pages/homePage.dart';
 import 'package:beu_/main%20pages/sevenHomepage.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class _IntroTwoState extends State<IntroTwo> {
                   await markIntroAsComplete();
                   // Navigate to the next intro page or main content page
                   // Replace 'Home()' with your desired destination
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePageTwo()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                 },
                 child: Text('Next'),
               ),
@@ -114,8 +115,6 @@ class _IntroTwoState extends State<IntroTwo> {
     prefs.setBool('showIntro', false);
   }
 }
-
-
   
   // void setState(Null Function() param0) {}
 

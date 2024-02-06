@@ -15,9 +15,9 @@ class Note {
 List<Note> sampleNotes = [
   Note(
     id: 0,
-    title: 'Like and Subscribe',
+    title: 'Benefits Of Time Management',
     content:
-        'A FREE way to support the channel is to give us a LIKE . It does not cost you but means a lot to us.\nIf you are new here please Subscribe',
+        'Time management is the process organising and planning how\nto divide your time between specific activities and priorities.\nThe benefits of time management include better habits and greater productivity.',
     modifiedTime: DateTime(2024, 1, 1, 34, 5),
   ),
   Note(
@@ -36,8 +36,8 @@ List<Note> sampleNotes = [
   ),
   Note(
     id: 3,
-    title: 'Gift Ideas for Mom',
-    content: '1. Jewelry box\n2. Cookbook\n3. Scarf\n4. Spa day gift card',
+    title: 'Discipline Habits',
+    content: 'It means doing what you have to do, even when you dont want to do it.\nDiscipline is an effective habit and effective habits lead to effective results.\nConversely, ineffective habits produce ineffective results.',
     modifiedTime: DateTime(2023, 1, 4, 16, 53),
   ),
   Note(
@@ -51,14 +51,14 @@ List<Note> sampleNotes = [
     id: 5,
     title: 'Bucket List',
     content:
-        '1. Travel to Japan\n2. Learn to play the guitar\n3. Write a novel\n4. Run a marathon\n5. Start a business',
+        'What should I write on my bucket list?\n Include anything you like on your bucket list.\nList career goals, travel destinations, health, finance, or relationship goals.\n It can be as long or as short as you want. Really, if you can dream it, you can do it.',
     modifiedTime: DateTime(2023, 1, 6, 13, 9),
   ),
   Note(
     id: 6,
-    title: 'Little pigs',
+    title: 'Motivational Books To Read',
     content:
-        "Once upon a time there were three little pigs who set out to seek their fortune.",
+        "“Atomic Habits” by James Clear. \n“The Power of Habit” by Charles Duhigg.\n“Big Magic: Creative Living Beyond Fear” by Elizabeth Gilbert\n“The Intentional Year: Simple Rhythms for Finding Freedom, Peace and Purpose” by Holly and Glenn Packaim",
     modifiedTime: DateTime(2023, 3, 7, 11, 12),
   ),
   Note(

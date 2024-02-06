@@ -1,11 +1,10 @@
-
 import 'package:beu_/for%20homepage/habit_database.dart';
 import 'package:beu_/main%20pages/homePage.dart';
 import 'package:beu_/main%20pages/newprofilepage.dart';
 import 'package:beu_/main%20pages/notespage.dart';
 
 import 'package:beu_/main%20pages/past_habits.dart';
-import 'package:beu_/profilePage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -107,6 +106,18 @@ class _HomePageState extends State<HomePage> {
     });
   }
 }
+
+
+// class HomePageTwo extends StatelessWidget {
+//   const HomePageTwo({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Center(
+//       child: Text('This is the second page'),
+//     );
+//   }
+// }
 
 
 

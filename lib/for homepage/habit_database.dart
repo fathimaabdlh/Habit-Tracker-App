@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 final _myBox = Hive.box("Habit_Database");
 
 class HabitDatabase {
-  List<List<dynamic>>? todaysHabitList = [];
+  List<dynamic>? todaysHabitList = [];
   Map<DateTime, int> heatMapDataSet = {};
 
   // create initial default data
@@ -112,4 +112,3 @@ class HabitDatabase {
     }
   }
 }
-
